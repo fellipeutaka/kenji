@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["biomejs", "fastify", "kaguya", "nestjs"],
+  "cSpell.words": ["biomejs", "fastify", "nestjs"],
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "typescript.preferences.autoImportFileExcludePatterns": ["dist"]
 }

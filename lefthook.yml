@@ -1,0 +1,17 @@
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+pre-commit:
+  commands:
+    check:
+      glob: "*"
+      run: pnpm biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+# prepare-commit-msg:
+#   commands:
+#     commitzen:
+#       interactive: true
+#       run: LEFTHOOK=0 npx cz --hook || true
+commit-msg:
+  commands:
+    lint:
+      run: npx commitlint --edit
