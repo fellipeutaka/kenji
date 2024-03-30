@@ -1,5 +1,11 @@
 # kenji
 
+## 0.3.0
+
+### Minor Changes
+
+- 6c5eeef: Add log to Nest.js Fastify template
+
 ## 0.2.0
 
 ### Minor Changes
