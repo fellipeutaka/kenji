@@ -11,7 +11,12 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
-  await app.listen(3000, "0.0.0.0");
+  const port = 3000;
+  const host = "0.0.0.0";
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+  const url = `${protocol}://${host}:${port}`;
+  await app.listen(port, host);
+  console.log(`Server listening on ${url} 🚀`);
 }
 
 bootstrap();
