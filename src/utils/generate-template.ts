@@ -71,18 +71,12 @@ export async function generateTemplate({
   });
 
   for (const file of sourceFiles) {
-    const isTsconfig = file === "tsconfig.json";
     const isPackageJson = file === "package.json";
 
     if (importPath !== "@/*") {
-      if (isTsconfig || file.endsWith(".ts") || file.endsWith(".tsx")) {
-        const filePath = path.join(root, file);
-        const content = await fs.readFile(filePath, "utf-8");
-        const searchRegex = isTsconfig ? /@\/\*/g : /@\//g;
-        const updatedContent = content.replace(searchRegex, importPath);
-        await fs.writeFile(filePath, updatedContent);
-      }
+      await updateImportPath({ file, root, importPath });
     }
+
     if (isPackageJson) {
       const filePath = path.join(root, file);
       const content = await fs.readFile(filePath, "utf-8");
@@ -109,6 +103,38 @@ export async function generateTemplate({
     s.start(`Installing dependencies with ${packageManager}`);
     await install(packageManager, root);
     s.stop(`Installed dependencies with ${packageManager}`);
+  }
+
+  console.log(
+    `${colors.green("Success!")} Created ${colors.cyan(appName)} in ${root}`,
+  );
+  console.log();
+}
+
+type UpdateImportPathProps = {
+  file: string;
+  root: string;
+  importPath: string;
+};
+
+async function updateImportPath({
+  file,
+  root,
+  importPath,
+}: UpdateImportPathProps) {
+  const isTsconfig = file === "tsconfig.json";
+  const isSwcConfig = file === ".swcrc";
+  const isConfigFile = isTsconfig || isSwcConfig;
+
+  if (isConfigFile || file.endsWith(".ts") || file.endsWith(".tsx")) {
+    const filePath = path.join(root, file);
+    const content = await fs.readFile(filePath, "utf-8");
+    const searchRegex = isConfigFile ? /@\/\*/g : /@\//g;
+    const updatedContent = content.replace(
+      searchRegex,
+      isConfigFile ? importPath : importPath.slice(0, -1),
+    );
+    await fs.writeFile(filePath, updatedContent);
   }
 }
 

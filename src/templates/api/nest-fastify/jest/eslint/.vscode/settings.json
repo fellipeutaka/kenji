@@ -1,0 +1,6 @@
+{
+  "cSpell.words": ["biomejs", "fastify", "nestjs"],
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.preferences.autoImportFileExcludePatterns": ["dist"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

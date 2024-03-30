@@ -27,8 +27,7 @@ export const templates = {
       {
         value: "nest-fastify",
         label: "Nest.js (Fastify)",
-        // testing: ["jest", "vitest"],
-        testing: ["vitest"],
+        testing: ["jest", "vitest"],
       },
       // {
       //   value: "fastify",
