@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "biome check --apply .",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.7",
+    "@nestjs/core": "^10.3.7",
+    "@nestjs/platform-fastify": "^10.3.7",
+    "reflect-metadata": "^0.2.1",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
+    "@nestjs/cli": "^10.3.2",
+    "@nestjs/schematics": "^10.1.1",
+    "@swc/cli": "^0.3.10",
+    "@swc/core": "^1.4.11",
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
+  }
+}
