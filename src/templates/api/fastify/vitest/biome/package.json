@@ -1,0 +1,32 @@
+{
+  "name": "",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "start": "tsx src/index.ts",
+    "start:dev": "tsx watch src/index.ts",
+    "start:debug": "tsx watch --inspect-brk src/index.ts",
+    "start:prod": "node .",
+    "lint": "biome check --apply .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:debug": "vitest --inspect-brk --inspect --logHeapUsage --threads=false",
+    "test:e2e": "vitest run --config ./vitest-e2e.config.ts",
+    "type-check": "tsc"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
+    "@types/node": "^20.11.30",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2"
+  }
+}

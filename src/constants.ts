@@ -29,11 +29,11 @@ export const templates = {
         label: "Nest.js (Fastify)",
         testing: ["jest", "vitest"],
       },
-      // {
-      //   value: "fastify",
-      //   label: "Fastify",
-      //   testing: ["jest", "vitest"],
-      // },
+      {
+        value: "fastify",
+        label: "Fastify",
+        testing: ["vitest"],
+      },
       // {
       //   value: "express",
       //   label: "Express",

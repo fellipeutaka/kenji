@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "start": "tsx src/index.ts",
+    "start:dev": "tsx watch src/index.ts",
+    "start:debug": "tsx watch --inspect-brk src/index.ts",
+    "start:prod": "node .",
+    "lint": "biome check --apply .",
+    "type-check": "tsc"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
+    "@types/node": "^20.11.30",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "fastify": "^4.26.2"
+  }
+}
