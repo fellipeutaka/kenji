@@ -1,5 +1,11 @@
 # kenji
 
+## 0.4.0
+
+### Minor Changes
+
+- 39ed7f3: Add Fastify template
+
 ## 0.3.0
 
 ### Minor Changes
