@@ -9,6 +9,7 @@ import {
   DEFAULT_LINTER,
   LINTERS,
   PATH_ALIAS_REGEX,
+  type ProjectType,
   type TestingFrameworks,
   templates,
 } from "./constants";
@@ -89,7 +90,7 @@ const program = new Command()
       message: "What type of project would you like to create?",
       options: Object.entries(templates).map(([key, value]) => ({
         label: value.label,
-        value: key as keyof typeof templates,
+        value: key as ProjectType,
       })),
     });
 

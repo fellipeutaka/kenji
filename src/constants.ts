@@ -78,4 +78,4 @@ export type ProjectType = keyof typeof templates;
 export type Framework =
   (typeof templates)[ProjectType]["items"][number]["value"];
 
-export const PATH_ALIAS_REGEX = /^[^\s].*\/\*$/;
+export const PATH_ALIAS_REGEX = /^[^*"]+\/\*\s*$/;
