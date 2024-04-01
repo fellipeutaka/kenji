@@ -1,5 +1,12 @@
 # kenji
 
+## 0.4.1
+
+### Patch Changes
+
+- 7dcb459: Allow whitespace on import alias
+  Remove `pnpm-lock.yaml` from Fastify template
+
 ## 0.4.0
 
 ### Minor Changes
