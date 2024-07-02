@@ -152,7 +152,7 @@ const program = new Command()
     });
 
     if (!initializeGit) {
-      console.log(
+      console.info(
         colors.gray(
           `You can initialize a git repository in the project directory later by running ${colors.cyan(
             "git init",
@@ -167,7 +167,9 @@ const program = new Command()
     });
 
     if (!installDeps) {
-      console.log(colors.gray("Remember to install dependencies after setup."));
+      console.info(
+        colors.gray("Remember to install dependencies after setup."),
+      );
     }
 
     await generateTemplate({

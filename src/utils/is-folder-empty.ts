@@ -30,13 +30,10 @@ export function isFolderEmpty(
   name: string,
   suppressLogs = false,
 ): boolean {
-  const log = suppressLogs ? () => {} : console.log;
-  const conflicts = fs.readdirSync(root).filter(
-    (file) =>
-      !validFiles.includes(file) &&
-      // Support IntelliJ IDEA-based editors
-      !/\.iml$/.test(file),
-  );
+  const log = suppressLogs ? () => {} : console.info;
+  const conflicts = fs
+    .readdirSync(root)
+    .filter((file) => !(validFiles.includes(file) || /\.iml$/.test(file)));
 
   if (conflicts.length > 0) {
     log(

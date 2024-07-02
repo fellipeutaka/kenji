@@ -105,10 +105,10 @@ export async function generateTemplate({
     s.stop(`Installed dependencies with ${packageManager}`);
   }
 
-  console.log(
+  console.info(
     `${colors.green("Success!")} Created ${colors.cyan(appName)} in ${root}`,
   );
-  console.log();
+  console.info();
 }
 
 type UpdateImportPathProps = {
@@ -143,7 +143,7 @@ async function install(packageManager: PackageManager, cwd: string) {
   const isOnline = !useYarn || (await getOnline());
   const args = ["install"];
   if (!isOnline) {
-    console.log(
+    console.info(
       colors.yellow(
         "You appear to be offline.\nFalling back to the local cache.",
       ),
@@ -157,10 +157,13 @@ async function install(packageManager: PackageManager, cwd: string) {
       cwd,
       env: {
         ...process.env,
+        // biome-ignore lint/style/useNamingConvention: This is a valid environment variable
         ADBLOCK: "1",
         // we set NODE_ENV to development as pnpm skips dev
         // dependencies when production
+        // biome-ignore lint/style/useNamingConvention: This is a valid environment variable
         NODE_ENV: "development",
+        // biome-ignore lint/style/useNamingConvention: This is a valid environment variable
         DISABLE_OPENCOLLECTIVE: "1",
       },
     });

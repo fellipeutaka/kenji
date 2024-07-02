@@ -49,6 +49,7 @@ export async function tryGitInit(root: string) {
     if (didInit) {
       try {
         fs.rmSync(path.join(root, ".git"), { recursive: true, force: true });
+        // biome-ignore lint/suspicious/noEmptyBlockStatements: Empty catch block
       } catch {}
     }
     return false;

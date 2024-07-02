@@ -1,3 +1,4 @@
+// biome-ignore lint/style/noNamespaceImport: This file is a wrapper for @clack/prompts
 import * as prompts from "@clack/prompts";
 
 export async function text(options: prompts.TextOptions) {
@@ -42,4 +43,5 @@ export async function confirm(options: prompts.ConfirmOptions) {
   return result;
 }
 
+// biome-ignore lint/performance/noBarrelFile: This file is a wrapper for @clack/prompts
 export { spinner } from "@clack/prompts";

@@ -13,4 +13,4 @@ const url = await server.listen({
   host,
 });
 
-console.log(`Server listening on ${url} 🚀`);
+console.info(`Server listening on ${url} 🚀`);
